@@ -6,12 +6,20 @@
   letter-spacing: 3px;
 }
 
+.navbar-brand p{
+  font-weight: 700;
+  color: #488D4C;
+}
+
 .nav-link{
   font-size: 18px;
+  font-weight: 600;
 }
 
 .nav-link:hover{
   font-weight: 600;
+  color: #488D4C;
+  text-decoration: underline;
 }
 
 .navbar-brand{
