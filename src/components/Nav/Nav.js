@@ -17,7 +17,7 @@ const Nav = () => {
     <div className="collapse navbar-collapse" id="navbarText">
       <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
         <li className="nav-item">
-          <Link className="nav-link active" aria-current="page" to="#">Home</Link>
+          <Link className="nav-link active" aria-current="page" to="/home">Home</Link>
         </li>
         <li className="nav-item">
           <Link className="nav-link" to="#">Features</Link>
@@ -26,9 +26,13 @@ const Nav = () => {
           <Link className="nav-link" to="#">Pricing</Link>
         </li>
       </ul>
-      <span className="navbar-text">
+
+
+      <Link to='/login' className="nav-link">
         Login/Register
-      </span>
+      </Link>
+
+      
     </div>
   </div>
       </nav>  

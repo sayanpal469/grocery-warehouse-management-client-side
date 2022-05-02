@@ -1,0 +1,36 @@
+
+.input{
+    border: 1px solid #488D4C;
+    outline: 0;
+    border-radius: 15px;
+}
+
+.input:focus{
+    border: 2px solid #488D4C;
+}
+
+.forgot{
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.btn{
+    border-radius: 20px;
+}
+
+.or-area{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.dag{
+    border: 1px solid black;
+    width: 80px;
+    margin: 25px;
+}
+
+.social{
+    font-size: 20px;
+}
