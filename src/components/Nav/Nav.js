@@ -1,36 +1,37 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+
 import './Nav.css'
-//import './NavEvent'
 
 const Nav = () => {
-    const containerRef = useRef('')
-    
-    const handelToggle = () => {
-        containerRef.classList.toggle('active')
-        }
-    
-
+ 
     return (
-        <nav class="navbar">
-        <div class="navbar-container container">
-            <input type="checkbox" name="" id=""/>
-            <div class="hamburger-lines">
-                <span class="line line1"></span>
-                <span class="line line2"></span>
-                <span class="line line3"></span>
-            </div>
-            <ul class="menu-items">
-                <li><Link to="home">Home</Link></li>
-                <li><Link to="#">About</Link></li>
-                <li><Link to="#">Category</Link></li>
-                <li><Link to="#">Menu</Link></li>
-                <li><Link to="#">Testimonial</Link></li>
-                <li><Link to="#">Contact</Link></li>
-            </ul>
-            <h1 class="logo">Grocery</h1>
-        </div>
-    </nav>
+      <nav className="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+  <div className="container">
+    <Link className="navbar-brand text-danger" to="#">
+    Healthy Piorr
+    </Link>
+    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span className="navbar-toggler-icon"></span>
+    </button>
+    <div className="collapse navbar-collapse" id="navbarText">
+      <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
+        <li className="nav-item">
+          <Link className="nav-link active" aria-current="page" to="#">Home</Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="#">Features</Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="#">Pricing</Link>
+        </li>
+      </ul>
+      <span className="navbar-text">
+        Login/Register
+      </span>
+    </div>
+  </div>
+      </nav>  
     );
 };
 
