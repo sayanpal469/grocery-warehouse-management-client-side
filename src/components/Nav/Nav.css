@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Baloo+2:wght@400;700&family=Baloo+Bhai+2:wght@400;700&family=Baloo+Bhaijaan+2:wght@400;500;700&family=Dancing+Script:wght@400;700&family=Fredoka+One&family=Fuzzy+Bubbles:wght@400;700&family=Indie+Flower&family=Inter:wght@100;200;300;600;700;800&family=Lato:wght@400;700&family=League+Gothic&family=Lobster&family=Poppins:wght@400;700&family=Quicksand:wght@400;700&family=Raleway:wght@300;400;700&family=Roboto:ital,wght@0,500;1,400;1,500&family=The+Nautigal:wght@400;700&display=swap');
 
 
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Baloo+2:wght@400;700&family=Baloo+Bhai+2:wght@400;700&family=Baloo+Bhaijaan+2:wght@400;500;700&family=Dancing+Script:wght@400;700&family=Fredoka+One&family=Fuzzy+Bubbles:wght@400;700&family=Indie+Flower&family=Inter:wght@100;200;300;600;700;800&family=Josefin+Sans:wght@400;700&family=Lato:wght@400;700&family=League+Gothic&family=Lobster&family=Poppins:wght@400;700&family=Quicksand:wght@400;700&family=Raleway:wght@300;400;700&family=Roboto:ital,wght@0,500;1,400;1,500&family=Satisfy&family=The+Nautigal:wght@400;700&display=swap');
+
 .navbar-brand {
   font-size: 1.75rem;
   letter-spacing: 3px;
@@ -11,8 +13,12 @@
   color: #488D4C;
 }
 
+.navbar-collapse{
+  font-family: 'Josefin Sans', sans-serif;
+}
+
 .nav-link{
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
 }
 
@@ -25,4 +31,12 @@
 .navbar-brand{
   font-family: 'Indie Flower', cursive;
   font-weight: 600;
+}
+
+.user-icon{
+  font-size: 25px;
+}
+
+.log-out{
+  font-weight: 700;
 }

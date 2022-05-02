@@ -1,36 +1,83 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import Fade from 'react-reveal/Fade';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
+import { async } from '@firebase/util';
 
 const Register = () => {
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+      ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
+      const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+
+      const [confirmPassword, setConfirmPassword] = useState('')
+
+      const navigate = useNavigate()
+      const [error1, setError1] = useState()
+
+      const handelConfirmPasswordBlur = (e) => {
+        setConfirmPassword(e.target.value)
+    }
+
+
+      const handelSubmit = async (e) => {
+          e.preventDefault()
+
+          const name = e.target.name.value
+          const email = e.target.email.value
+          const password = e.target.password.value
+          
+          if(password < 6) {
+            setError1('minimum 6 charecter')
+          }
+
+          if(password !== confirmPassword){
+              setError1("Password did't match")
+          }
+
+          await createUserWithEmailAndPassword(email, password)
+          await updateProfile({ displayName: name })
+          navigate('/')
+      }
+
     return (
         <div className='mt-5 container'>
             <div className='row d-flex align-items-center'>
 
+            <Fade left>
             <div className='col-lg-6 col-md-12 col-sm-12'>
                 <img className='w-100' src="https://i.ibb.co/mvDPYjH/2007-i039-019-cyber-security-spyware-data-protection-isometric-set-06.jpg" alt="" />
             </div>
+            </Fade>
 
+            <Fade right>
             <div className='col-lg-6 col-md-12 col-sm-12 mt-5'>
-            <form className='w-75 h-auto mx-auto shadow p-5'>
+            <form onSubmit={handelSubmit} className='w-75 h-auto mx-auto shadow p-5'>
                 <h1 className='text-center mb-5'>Register</h1>
-            <div class="mb-3">
-                <input type="text" class="input form-control mb-4" placeholder='Name' required/>
+            <div className="mb-3">
+                <input name='name' type="text" className="input form-control mb-4" placeholder='Name' required/>
             </div>
-            <div class="mb-3">
-                <input type="email" class="input form-control mb-4" id="exampleInputEmail1" placeholder='Email' aria-describedby="emailHelp"/>
+            <div className="mb-3">
+                <input name='email' type="email" className="input form-control mb-4" id="exampleInputEmail1" placeholder='Email' aria-describedby="emailHelp"/>
             </div>
-            <div class="mb-3">
-                <input type="password" class="input form-control mb-4" placeholder='Password' id="exampleInputPassword1"/>
+            <div className="mb-3">
+                <input name='password' type="password" className="input form-control mb-4" placeholder='Password' id="exampleInputPassword1"/>
             </div>
-            <div class="mb-3">
-                <input type="password" class="input form-control mb-4" placeholder='Confirm Password' id="exampleInputPassword1"/>
+            <div className="mb-3">
+                <input onBlur={handelConfirmPasswordBlur} name='confirmPassword' type="password" className="input form-control mb-4" placeholder='Confirm Password' id="exampleInputPassword1"/>
             </div>
-            <div class="mb-3 text-left">
+            <div className="mb-3 text-left">
                 <Link className='forgot' to=''>Forgot Password?</Link>
             </div>
-            
-            <button type="submit" class="w-100 btn btn-success">Submit</button>
+
+            <p className='text-danger text-center'>{error1}</p>
+
+            <button type="submit" className="w-100 btn btn-primary py-2">Submit</button>
             <p className='text-center mt-2'>Already have an account? <Link to='/login' className='text-primary text-decoration-none'>Login</Link> </p>
             <div className='or-area mt-3'>
                 <div className='dag'></div>
@@ -40,6 +87,7 @@ const Register = () => {
                 <SocialLogin/>
             </form>
             </div>
+            </Fade>
             
         </div>
         </div>

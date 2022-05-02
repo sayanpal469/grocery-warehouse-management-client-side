@@ -1,9 +1,19 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
+import auth from '../../firebase.init';
+import { FaUser } from "react-icons/fa";
 
 import './Nav.css'
 
 const Nav = () => {
+  const [user, loading, error] = useAuthState(auth);
+  console.log(user);
+
+  const logOut = () => {
+    signOut(auth);
+  }
  
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-white fixed-top">
@@ -27,14 +37,34 @@ const Nav = () => {
         </li>
       </ul>
 
+      {
+        user?.email ? <div className="dropdown">
+        <span className="dropdown-toggle user-icon" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+          <FaUser></FaUser>
+        </span>
+        <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li className='text-center my-2'>
+              <img className='w-25 rounded-circle' src={user.photoURL} alt="" />
+            </li>
+          
+          <li className='text-center'>{user.displayName}</li>
+          <li className='text-center'>
+            <button onClick={logOut} className='btn text-danger log-out'>Log Out</button>
+          </li>
+        </ul>
+      </div>
 
-      <Link to='/login' className="nav-link">
+        :
+        <Link to='/login' className="nav-link">
         Login/Register
-      </Link>
+        </Link>
+      }
+
+      
 
 
+      </div>
     </div>
-  </div>
       </nav>  
     );
 };
