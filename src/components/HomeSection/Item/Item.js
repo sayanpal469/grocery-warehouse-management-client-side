@@ -1,10 +1,16 @@
 import React from 'react';
 import './Item.css'
 import Zoom from 'react-reveal/Zoom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 const Item = ({item}) => {
-    const {name, image, quantity, description, price, supplierName} = item
+    const {name, image, quantity, description, price, supplierName, _id} = item
+    const navigate = useNavigate()
+
+    const detail = () => {
+        navigate(`/item/${_id}`)
+    }
 
     return (
         
@@ -18,7 +24,7 @@ const Item = ({item}) => {
                 <p className="card-title font-weight-bold">Quantity: {quantity}</p>
                 <p className="card-title font-weight-bold">Supplier Name: {supplierName}</p>
                 <p className="card-text">{description}</p>
-                <a href="#" className="btn btn-primary">Go somewhere</a>
+                <button onClick={detail} className="btn btn-primary">Go somewhere</button>
                 </div>
             </div>
             </Zoom>            
