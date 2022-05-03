@@ -24,7 +24,7 @@ const Item = ({item}) => {
                 <p className="card-title font-weight-bold">Quantity: {quantity}</p>
                 <p className="card-title font-weight-bold">Supplier Name: {supplierName}</p>
                 <p className="card-text">{description}</p>
-                <button onClick={detail} className="btn btn-primary">Go somewhere</button>
+                <button onClick={detail} className="btn btn-primary">Update</button>
                 </div>
             </div>
             </Zoom>            

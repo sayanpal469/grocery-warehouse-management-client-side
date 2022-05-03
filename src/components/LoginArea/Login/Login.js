@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import './Login.css'
 import Fade from 'react-reveal/Fade';
@@ -13,7 +13,13 @@ const Login = () => {
         loading,
         error,
       ] = useSignInWithEmailAndPassword(auth);
+      const navigate = useNavigate()
+      const location = useLocation()
+      const from = location.state?.from?.pathname || '/' ;
 
+      if(user) {
+        navigate(from, {replace: true})
+      }
 
       const handelSubmit = (e) => {
           e.preventDefault()

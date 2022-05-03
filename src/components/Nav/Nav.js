@@ -16,7 +16,7 @@ const Nav = () => {
   }
  
     return (
-      <nav className="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+      <nav className="navbar navbar-expand-lg navbar-light bg-white sticky-top">
   <div className="container">
     <Link className="navbar-brand" to="#">
       <p id='brand'>Healthy Piorr</p>
@@ -29,12 +29,37 @@ const Nav = () => {
         <li className="nav-item">
           <Link  className="nav-link" aria-current="page" to="/home">Home</Link>
         </li>
+
+        {
+          user?.email ? <li className="nav-item">
+          <Link className="nav-link" to="/manage">Manage Item</Link>
+          </li>
+          :
+          ''
+        }
+        {
+          user?.email ? <li className="nav-item">
+          <Link className="nav-link" to="/add">Add Item</Link>
+          </li>
+          :
+          ''
+        }
+        {
+          user?.email ? <li className="nav-item">
+          <Link className="nav-link" to="myItem">My Item</Link>
+          </li>
+          :
+          ''
+        }
+
         <li className="nav-item">
-          <Link className="nav-link" to="#">Features</Link>
+          <Link className="nav-link" to="blog">Blog</Link>
         </li>
+
         <li className="nav-item">
-          <Link className="nav-link" to="#">Pricing</Link>
+          <Link className="nav-link" to="about">About</Link>
         </li>
+
       </ul>
 
       {
