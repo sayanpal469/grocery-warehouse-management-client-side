@@ -43,48 +43,48 @@
       "price": "$1,734.30",
       "image": "https://i.ibb.co/wRKm7tt/fruit-4-2-600x750.jpg",
       "description": 40,
-      "name": "green",
+      "name": "MulBery",
       "supplierName": "Jill Oneill",
-      "quantity": "jilloneill@harmoney.com"
+      "quantity": "26"
     },
     {
-      "price": "$1,586.88",
-      "image": "http://placehold.it/32x32",
-      "description": 36,
-      "name": "green",
+      "price": "$18",
+      "image": "https://i.ibb.co/3413zjT/2-2-300x375.jpg",
+      "description": "They have a characteristic pungent, spicy flavor that mellows and sweetens considerably with cooking",
+      "name": "Garlic",
       "supplierName": "Crane Santana",
-      "quantity": "cranesantana@harmoney.com"
+      "quantity": "50"
     },
     {
-      "price": "$2,455.59",
-      "image": "http://placehold.it/32x32",
-      "description": 21,
-      "name": "green",
+      "price": "$45",
+      "image": "https://i.ibb.co/Z68HrPb/onion.jpg",
+      "description": "An onion is a round vegetable with a brown skin that grows underground. It has many white layers on its inside which have a strong, sharp smell and taste.",
+      "name": "Onion",
       "supplierName": "Maude Andrews",
-      "quantity": "maudeandrews@harmoney.com"
+      "quantity": "60"
     },
     {
       "price": "$3,140.26",
       "image": "http://placehold.it/32x32",
-      "description": 23,
-      "name": "green",
-      "supplierName": "West Tanner",
-      "quantity": "westtanner@harmoney.com"
+      "description": "cardamom, also spelled cardamon, spice consisting of whole or ground dried fruits, or seeds, of Elettaria cardamomum, a herbaceous perennial plant of the ginger family.",
+      "name": "Cardamom",
+      "supplierName": "Westler Tanner",
+      "quantity": "36"
     },
     {
       "price": "$1,635.34",
-      "image": "http://placehold.it/32x32",
-      "description": 29,
-      "name": "blue",
+      "image": "https://i.ibb.co/rw2LrNN/holud.webp",
+      "description": "Turmeric is a common spice that comes from the root of Curcuma longa. It contains a chemical called curcumin, which might reduce swelling",
+      "name": "Tumeric",
       "supplierName": "Edwina Mccall",
-      "quantity": "edwinamccall@harmoney.com"
+      "quantity": "75"
     },
     {
       "price": "$3,445.80",
-      "image": "http://placehold.it/32x32",
+      "image": "https://i.ibb.co/PzBjnnq/ada2.jpg",
       "description": 23,
-      "name": "brown",
+      "name": "Ginger",
       "supplierName": "Katy Robles",
-      "quantity": "katyrobles@harmoney.com"
+      "quantity": "55"
     }
   ]

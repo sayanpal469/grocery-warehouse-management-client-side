@@ -1,0 +1,32 @@
+.icon{
+    margin: 15px;
+    font-size: 32px;
+}
+
+.camera-icon{
+    font-size: 40px;
+}
+
+.facebook{
+    color: #4267B2;
+}
+
+.insta{
+   color: #E1306C; 
+}
+
+.github{
+    color: black;
+}
+
+.twitter{
+    color: #1da1f2;
+}
+
+.linkedIn{
+    color: #0e76a8;
+}
+
+.text-reset{
+    text-decoration: none;
+}

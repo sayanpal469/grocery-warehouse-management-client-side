@@ -9,7 +9,7 @@ import './Nav.css'
 
 const Nav = () => {
   const [user, loading, error] = useAuthState(auth);
-  console.log(user);
+  //console.log(user);
 
   const logOut = () => {
     signOut(auth);

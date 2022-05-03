@@ -7,7 +7,6 @@ import Zoom from 'react-reveal/Zoom';
 const ItemDetail = () => {
     const { itemId } = useParams()
     const [item, setItem] = useState({})
-    const [quantity, setQuantity] = useState()
     const navigate = useNavigate()
 
     useEffect( () => {
@@ -23,7 +22,7 @@ const ItemDetail = () => {
 
         const handelDeleverQuantity = () => {
             const newQuantity = parseInt(itemQuantity) - 1
-            console.log(newQuantity);
+            //console.log(newQuantity);
 
             const deleverQuantity = {newQuantity}
 

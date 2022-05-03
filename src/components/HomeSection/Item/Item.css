@@ -4,3 +4,8 @@
     font-family: 'Josefin Sans', sans-serif;
     color: dimgray;
 }
+
+.card-img-top:hover{
+    -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
