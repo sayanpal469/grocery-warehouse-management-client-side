@@ -7,10 +7,10 @@ import Login from './components/LoginArea/Login/Login';
 import Register from './components/LoginArea/Register/Register';
 import ItemDetail from './components/HomeSection/ItemDetail/ItemDetail';
 import AddItem from './components/PrivateSection/AddItem/AddItem';
-import MyItem from './components/PrivateSection/MyItem/MyItem';
 import RequireAuth from './components/LoginArea/RequireAuth/RequireAuth';
 import ManageItems from './components/PrivateSection/ManageItem/ManageItems';
 import Footer from './components/Footer/Footer';
+import MyItems from './components/PrivateSection/MyItems/MyItems';
 
 function App() {
   return (
@@ -26,7 +26,7 @@ function App() {
         <ManageItems/>
        </RequireAuth> }></Route>
        <Route path='/add' element={ <AddItem/> }></Route>
-       <Route path='/myItem' element={ <MyItem/> }></Route>
+       <Route path='/myItem' element={ <MyItems/> }></Route>
        <Route path='/login' element={ <Login/> }></Route>
        <Route path='/register' element={ <Register/> }></Route>
      </Routes>

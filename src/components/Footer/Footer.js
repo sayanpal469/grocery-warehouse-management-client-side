@@ -11,10 +11,10 @@ import './Footer.css'
 
 const Footer = () => {
     return (
-<footer class="text-center text-lg-start bg-light text-muted">
+<footer class="text-center text-lg-start bg-dark text-muted">
   
   <section
-    class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+    class="d-flex  justify-content-center justify-content-lg-between p-4 border-bottom text-white"
   >
     
     <div class="me-5 d-none d-lg-block">
@@ -23,7 +23,7 @@ const Footer = () => {
     
 
     
-    <div>
+    <div className=''>
       <Link to="" class="me-4 icon text-reset">
         <BsFacebook className='facebook'></BsFacebook>
       </Link>
@@ -46,7 +46,7 @@ const Footer = () => {
 
  
   <section class="">
-    <div class="container text-center text-md-start mt-5">
+    <div class="container text-white text-center text-md-start mt-5">
       
       <div class="row mt-3">
        
@@ -116,7 +116,7 @@ const Footer = () => {
   
 
   
-  <div class="text-center p-4" style={{backgrounColor: '0, 0, 0, 0.05'}}>
+  <div class="text-center text-white p-4" style={{backgrounColor: '0, 0, 0, 0.05'}}>
     © 2022 Copyright-
     <Link class="text-reset fw-bold" to="https://mdbootstrap.com/">Phonix.com</Link>
   </div>
