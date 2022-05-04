@@ -10,7 +10,7 @@ const useItems = (number) => {
             const products = data.slice(0,number)
             setItems(products)
         })
-    },[])
+    },[items])
 
     
     return [items, setItems]
