@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import './ItemDetail.css'
 import Fade from 'react-reveal/Fade';
-import Zoom from 'react-reveal/Zoom';
+
 
 const ItemDetail = () => {
     const { itemId } = useParams()
@@ -95,13 +95,13 @@ const ItemDetail = () => {
             </Fade>
             </div>
             <div className='text-center'>
-                <Zoom bottom>
+                
                 <button onClick={() => navigate('/manage')} className='btn btn-primary'>Manage Item</button>
-                </Zoom>
+               
                 <br />
-                <Zoom bottom>
+                
                 <button onClick={() => navigate('/home')} className='btn btn-primary my-3'>Back to home</button>
-                </Zoom>
+               
             </div>
 
             </div>

@@ -5,7 +5,13 @@
     color: dimgray;
 }
 
+h1{
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+
+
 .card-img-top:hover{
     -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
+    transform: scaleX(-1);
 }

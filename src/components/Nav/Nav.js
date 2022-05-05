@@ -67,7 +67,7 @@ const Nav = () => {
         <span className="dropdown-toggle user-icon" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
           <FaUser></FaUser>
         </span>
-        <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <ul className="dropdown-menu text-center" aria-labelledby="dropdownMenuButton1">
           <li className='text-center my-2'>
               <img className='w-25 rounded-circle' src={user.photoURL} alt="" />
             </li>

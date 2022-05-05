@@ -1,38 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Baloo+2:wght@400;700&family=Baloo+Bhai+2:wght@400;700&family=Baloo+Bhaijaan+2:wght@400;500;700&family=Dancing+Script:wght@400;700&family=Fredoka+One&family=Fuzzy+Bubbles:wght@400;700&family=Indie+Flower&family=Inter:wght@100;200;300;600;700;800&family=Josefin+Sans:wght@400;700&family=Lato:wght@400;700&family=League+Gothic&family=Lobster&family=Poppins:wght@400;700&family=Quicksand:wght@400;700&family=Raleway:wght@300;400;700&family=Roboto:ital,wght@0,500;1,400;1,500&family=Satisfy&family=The+Nautigal:wght@400;700&display=swap');
 
-footer{
+
+.rIcon{
+    font-size: 60px;
+    color: orange;
+}
+
+.extraPara{
     font-family: 'Josefin Sans', sans-serif;
 }
 
-.icon{
-    margin: 15px;
-    font-size: 32px;
+/*
+@media only screen and (max-width: 576px) {
+    .box{
+        border-bottom: 1px solid gray;
+    }
+    
 }
-
-.camera-icon{
-    font-size: 40px;
+@media only screen and (max-width: 768px) {
+    .box{
+        border-bottom: 1px solid gray;
+    }
+    
 }
-
-.facebook{
-    color: #4267B2;
+@media only screen and (max-width: 992px) {
+    .box{
+        border-right: 1px solid gray;
+    }
+    
 }
-
-.insta{
-   color: #E1306C; 
-}
-
-.github{
-    color: black;
-}
-
-.twitter{
-    color: #1da1f2;
-}
-
-.linkedIn{
-    color: #0e76a8;
-}
-
-.text-reset{
-    text-decoration: none;
-}
+*/

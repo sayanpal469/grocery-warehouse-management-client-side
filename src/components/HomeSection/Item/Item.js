@@ -16,7 +16,7 @@ const Item = ({item}) => {
         
         <div className='col-lg-4 col-md-6 col-sm-12 mt-5'>
             <Zoom top>
-            <div className="card mx-auto" style={{width: '18rem', border: 'none'}}>
+            <div className="card mx-auto" style={{width: '25rem', border: 'none'}}>
                 <img src={image} className="card-img-top" alt="..."/>
                 <div className="card-body">
                 <h5 className="card-title font-weight-bold">{name}</h5>
