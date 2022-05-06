@@ -1,18 +1,22 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import './Login.css'
 import Fade from 'react-reveal/Fade';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 
 const Login = () => {
+    const emailRef = useRef('')
     const [
         signInWithEmailAndPassword,
         user,
         loading,
         error,
       ] = useSignInWithEmailAndPassword(auth);
+      const [sendPasswordResetEmail, sending, error1] = useSendPasswordResetEmail(
+        auth
+      );
       const navigate = useNavigate()
       const location = useLocation()
       const from = location.state?.from?.pathname || '/' ;
@@ -29,6 +33,17 @@ const Login = () => {
 
           signInWithEmailAndPassword(email, password)
       }
+
+      const resetPassword = async () => {
+        const email = emailRef.current.value
+        if (email) {
+          await sendPasswordResetEmail(email);
+          alert("Sent email");
+         }
+          else{
+          alert("Please enter your email address");
+        }
+        }
     return (
         <div className='mt-5 container'>
             <div className='row d-flex align-items-center'>
@@ -44,13 +59,13 @@ const Login = () => {
             <form onSubmit={handelSubmit} className='w-75 h-auto mx-auto shadow p-5'>
                 <h1 className='text-center mb-5'>Login</h1>
             <div className="mb-3">
-                <input name='email' type="email" className="input form-control mb-4" id="exampleInputEmail1" placeholder='Email' aria-describedby="emailHelp"/>
+                <input ref={emailRef} name='email' type="email" className="input form-control mb-4" id="exampleInputEmail1" placeholder='Email' aria-describedby="emailHelp"/>
             </div>
             <div className="mb-3">
                 <input name='password' type="password" className="input form-control mb-4" placeholder='Password' id="exampleInputPassword1"/>
             </div>
             <div className="mb-3 text-left">
-                <Link className='forgot' to=''>Forgot Password?</Link>
+                <Link onClick={resetPassword} className='forgot' to=''>Forgot Password?</Link>
             </div>
             
             <p className='text-danger text-center'>{error?.message}</p>

@@ -11,6 +11,7 @@ import RequireAuth from './components/LoginArea/RequireAuth/RequireAuth';
 import ManageItems from './components/PrivateSection/ManageItem/ManageItems';
 import Footer from './components/Footer/Footer';
 import MyItems from './components/PrivateSection/MyItems/MyItems';
+import Chat from './components/Chat/Chat';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
        <Route path='/login' element={ <Login/> }></Route>
        <Route path='/register' element={ <Register/> }></Route>
      </Routes>
+     <Chat/>
      <Footer/>
     </div>
   );

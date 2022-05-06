@@ -71,9 +71,7 @@ const Register = () => {
             <div className="mb-3">
                 <input onBlur={handelConfirmPasswordBlur} name='confirmPassword' type="password" className="input form-control mb-4" placeholder='Confirm Password' id="exampleInputPassword1"/>
             </div>
-            <div className="mb-3 text-left">
-                <Link className='forgot' to=''>Forgot Password?</Link>
-            </div>
+            
 
             <p className='text-danger text-center'>{error1}</p>
 

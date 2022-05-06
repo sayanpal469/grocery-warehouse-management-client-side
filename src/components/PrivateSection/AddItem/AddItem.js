@@ -1,11 +1,13 @@
 import { useAuthState } from 'react-firebase-hooks/auth'
 import auth from '../../../firebase.init';
 import useItems from '../../../Hooks/useItems';
+import useUser from '../../../Hooks/useUser';
 
 
 const AddItem = () => {
     const [user] = useAuthState(auth)
     const [items, setItems] = useItems([])
+    const [userItems, setUserItems] = useUser()
     //console.log(user);
     
     const handelSubmit = (e) => {
@@ -48,7 +50,7 @@ const AddItem = () => {
             })
             .then(res => res.json())
             .then(data => {
-            setItems(data)    
+            setUserItems(data)        
             alert('Product added')
             console.log('Success:', data);
             e.target.reset()
