@@ -45,9 +45,15 @@ const ItemDetail = () => {
         e.preventDefault()
 
         const addQuantity = e.target.addQuantity.value
-        //console.log(parseInt(addQuantity));
+        
+        if(addQuantity == false) {
+            alert('Please enter a number')
+        } else if(addQuantity < 0) {
+            alert('Please enter a positive number')
+        }
+         else{
         const newQuantity = parseInt(itemQuantity) + parseInt(addQuantity)
-        //console.log(newQuantity);
+        
 
         const updateQuantity = {newQuantity}
         
@@ -65,6 +71,9 @@ const ItemDetail = () => {
                 alert('quantity added')
                 e.target.reset()
             })
+        }
+
+        
 
     }
     return (
