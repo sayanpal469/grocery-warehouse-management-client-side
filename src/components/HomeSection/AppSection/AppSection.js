@@ -8,7 +8,7 @@ const AppSection = () => {
                     <img className='w-75' src="https://i.ibb.co/1QNkKD2/mobiles.png" alt="" />
                 </div>
                 <div className='col-lg-6 col-md-12 col-sm-12'>
-                    <p className='fw-bold text-danger'>Mobile App</p>
+                    <h6 className='fw-bold text-danger mb-4'>Mobile App</h6>
                     <h1>Download the app</h1>
                     <p>Now order Farm Fresh Fruits and Vegetables at your fingertips. Download the free Healthify app available on Android and iOS.</p>
                     <h5>Download the app and get Special Discounts</h5>
@@ -18,6 +18,8 @@ const AppSection = () => {
                     </div>
                 </div>
             </div>
+
+            
         </div>
     );
 };
