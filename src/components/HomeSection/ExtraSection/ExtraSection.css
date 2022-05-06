@@ -10,23 +10,20 @@
     font-family: 'Josefin Sans', sans-serif;
 }
 
-/*
+.box{
+    border-right: 1px solid lightgray;
+}
+
 @media only screen and (max-width: 576px) {
     .box{
-        border-bottom: 1px solid gray;
+        border-bottom: 1px solid lightgray;
     }
     
 }
 @media only screen and (max-width: 768px) {
     .box{
-        border-bottom: 1px solid gray;
+        border-right: none;
     }
     
 }
-@media only screen and (max-width: 992px) {
-    .box{
-        border-right: 1px solid gray;
-    }
-    
-}
-*/
+

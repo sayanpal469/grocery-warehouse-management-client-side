@@ -18,11 +18,10 @@ const ItemDetail = () => {
 
 
         const itemQuantity = item.quantity
-        //console.log(parseInt(quantity));
 
         const handelDeleverQuantity = () => {
+           if(itemQuantity > 0) {
             const newQuantity = parseInt(itemQuantity) - 1
-            //console.log(newQuantity);
 
             const deleverQuantity = {newQuantity}
 
@@ -39,6 +38,9 @@ const ItemDetail = () => {
                     console.log('success', data);
                     alert('Delevered')
                 })
+           } else{
+               alert('Item Out of stock')
+           }
             }
 
         const handelAddQuantity = (e) => {

@@ -9,7 +9,7 @@ const ExtraSection = () => {
         <div className="container my-5">
             <div className='row border py-3'>
             <div className="col-lg-4 col-md-4 col-sm-6">
-                <div className='box d-flex justify-content-between align-items-center border-end p-3'>
+                <div className='box d-flex justify-content-between align-items-center p-3'>
                     <div>
                         <FaShippingFast className='rIcon'></FaShippingFast>
                     </div>
@@ -20,7 +20,7 @@ const ExtraSection = () => {
                 </div>
             </div>
             <div className="col-lg-4 col-md-4 col-sm-6">
-                <div className='box d-flex justify-content-between align-items-center border-end p-3'>
+                <div className='box d-flex justify-content-between align-items-center  p-3'>
                     <div>
                         <HiOutlineThumbUp className='rIcon'></HiOutlineThumbUp>
                     </div>

@@ -15,7 +15,7 @@ const Partner = () => {
                 </div>
                 <div className="col-lg-4 col-md-4 col-sm-12 text-center">
                    <h2 className='fw-bold'>Became A Partner & Earn</h2>
-                   <h4 className='text-info my-3'>Rs 50,000/Per Month</h4>
+                   <h4 className='text-primary my-3'>Rs 50,000/Per Month</h4>
                    <p>Or more without any investment</p>
                    <button className='btn btn-success px-5'>Join us now!</button>
                    <img className='w-100' src={PartnerHand} alt="" />
@@ -27,15 +27,15 @@ const Partner = () => {
 
             <div className="row my-5 text-center">
                 <div className="col-lg-4 col-md-6 col-sm-12">
-                    <img src={Income} alt="" />
+                    <img className='w-25' src={Income} alt="" />
                     <p>Guaranteed Income</p>
                 </div>
                 <div className="col-lg-4 col-md-6 col-sm-12">
-                    <img src={Invest} alt="" />
+                    <img className='w-25' src={Invest} alt="" />
                     <p>No Investment Needed</p>
                 </div>
                 <div className="col-lg-4 col-md-6 col-sm-12">
-                    <img src={Fresh} alt="" />
+                    <img className='w-25' src={Fresh} alt="" />
                     <p>Serve Fresh Vegetables and <br /> Groceries in your community</p>
                 </div>
                 
