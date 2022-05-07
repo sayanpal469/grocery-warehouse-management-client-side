@@ -1,19 +1,41 @@
 import React from 'react';
 import './SocialLogin.css'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FcGoogle } from "react-icons/fc";
 import { AiFillGithub } from "react-icons/ai";
 import auth from '../../../firebase.init';
-import { useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useAuthState, useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import Loading from '../../Loading/Loading';
 
 
 const SocialLogin = () => {
-    const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+    const [signInWithGoogle, user1, loading, error] = useSignInWithGoogle(auth);
     const [signInWithGithub, user2, loading2, error2] = useSignInWithGithub(auth);
-    const navigate = useNavigate()
+    const [user] = useAuthState(auth)
 
-    if(user || user2) {
-        navigate('/')
+    const navigate = useNavigate()
+    const location = useLocation()
+    const from = location.state?.from?.pathname || '/' ;
+
+
+    if(user1) {
+       /* const url = `http://localhost:5000/login`
+
+        fetch(url, {
+            method: 'POST', // or 'PUT'
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                email: user?.email
+            }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                localStorage.setItem("accessToken", data.token)
+                
+            })*/
+            navigate(from, {replace: true})
     }
     return (
         <div>

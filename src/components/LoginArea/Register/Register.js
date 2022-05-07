@@ -75,7 +75,7 @@ const Register = () => {
 
             <p className='text-danger text-center'>{error1}</p>
 
-            <button type="submit" className="w-100 btn btn-primary py-2">Submit</button>
+            <button type="submit" className="w-100 btn btn-success py-2">Register</button>
             <p className='text-center mt-2'>Already have an account? <Link to='/login' className='text-primary text-decoration-none'>Login</Link> </p>
             <div className='or-area mt-3'>
                 <div className='dag'></div>

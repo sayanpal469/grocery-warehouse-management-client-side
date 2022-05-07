@@ -31,7 +31,7 @@ const ExtraSection = () => {
                 </div>
             </div>
             <div className="col-lg-4 col-md-4 col-sm-6">
-                <div className='box d-flex justify-content-between align-items-center p-3'>
+                <div className='d-flex justify-content-between align-items-center p-3'>
                     <div>
                         <MdPayment className='rIcon'></MdPayment>
                     </div>

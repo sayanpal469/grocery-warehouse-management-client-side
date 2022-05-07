@@ -21,12 +21,13 @@ const AddItem = () => {
         const image = e.target.productPic.value
         
         const newProduct = {supplierName, email, name, price, quantity, description, image}
-        console.log(newProduct);
+        //console.log(newProduct);
 
         const url = 'http://localhost:5000/product'
         fetch(url, {
             method: 'POST',
             headers: {
+                //'authoraization': `${user.email} ${localStorage.getItem("accessToken")}`,
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(newProduct),
@@ -35,7 +36,7 @@ const AddItem = () => {
             .then(data => {
             setItems(data)    
             alert('Product added')
-            console.log('Success:', data);
+            //console.log('Success:', data);
             e.target.reset()
         })
 
@@ -52,7 +53,7 @@ const AddItem = () => {
             .then(data => {
             setUserItems(data)        
             alert('Product added')
-            console.log('Success:', data);
+            //console.log('Success:', data);
             e.target.reset()
         })
     }

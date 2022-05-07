@@ -3,7 +3,7 @@ import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import './Login.css'
 import Fade from 'react-reveal/Fade';
-import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useAuthState, useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 
 const Login = () => {
@@ -17,12 +17,32 @@ const Login = () => {
       const [sendPasswordResetEmail, sending, error1] = useSendPasswordResetEmail(
         auth
       );
+      const [user1] = useAuthState(auth)
       const navigate = useNavigate()
       const location = useLocation()
       const from = location.state?.from?.pathname || '/' ;
 
-      if(user) {
-        navigate(from, {replace: true})
+      
+
+      if(user1) {
+
+        /*const url = `http://localhost:5000/login`
+
+        fetch(url, {
+            method: 'POST', // or 'PUT'
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                email: user?.email
+            }),
+            })
+            .then(response => response.json())
+            .then(data => {
+            console.log('Success:', data);
+            })*/
+            navigate(from, {replace: true})
+
       }
 
       const handelSubmit = (e) => {
@@ -70,7 +90,7 @@ const Login = () => {
             
             <p className='text-danger text-center'>{error?.message}</p>
 
-            <button type="submit" className="w-100 btn btn-success">Submit</button>
+            <button type="submit" className="w-100 btn btn-success">Log in</button>
             <p className='text-center mt-2'>Don't have any account? <Link to='/register' className='text-primary text-decoration-none'>Create New Account</Link> </p>
             <div className='or-area mt-3'>
                 <div className='dag'></div>

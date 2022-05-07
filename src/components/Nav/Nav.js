@@ -73,15 +73,17 @@ const Nav = () => {
             </li>
           
           <li className='text-center'>{user.displayName}</li>
+          <Link className='text-decoration-none' to='/'>
           <li className='text-center'>
-            <button onClick={logOut} className='btn text-danger log-out'>Log Out</button>
+            <Link to='/' onClick={logOut} className='log-out text-danger'>Log Out</Link>
           </li>
+          </Link>
         </ul>
       </div>
 
         :
-        <Link to='/login' className="nav-link">
-        Login/Register
+        <Link  to='/login' className="login-link px-4 py-1">
+        Login
         </Link>
       }
 
