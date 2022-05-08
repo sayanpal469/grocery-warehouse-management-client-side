@@ -43,7 +43,7 @@ function App() {
        <Route path='*' element={ <NotFound/> }></Route>
      </Routes>
      <ToastContainer/>
-     {/*<Chat/>*/}
+     <Chat/>
      <Footer/>
     </div>
   );
