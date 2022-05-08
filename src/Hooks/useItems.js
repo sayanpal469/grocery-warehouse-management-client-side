@@ -4,7 +4,7 @@ const useItems = (number) => {
     const [items, setItems] = useState([])
 
     useEffect( () => {
-        fetch(`https://nameless-reef-88992.herokuapp.com/product`)
+        fetch(`http://localhost:5000/product`)
         .then(res => res.json())
         .then(data => {
             const products = data.slice(0,number)

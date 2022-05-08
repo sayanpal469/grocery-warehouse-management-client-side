@@ -11,7 +11,7 @@ const ManageItem = ({item}) => {
     const handleDelete = (id) => {
         const proceed = window.confirm(`Are You Sure You Want To Delete ${name}?`)
         if(proceed){
-            const url =`https://nameless-reef-88992.herokuapp.com/product/${id}`;
+            const url =`http://localhost:5000/product/${id}`;
             fetch(url,{
                 method:'DELETE'
             })

@@ -18,24 +18,8 @@ const SocialLogin = () => {
     const from = location.state?.from?.pathname || '/' ;
 
 
-    if(user1) {
-       /* const url = `https://nameless-reef-88992.herokuapp.com/login`
-
-        fetch(url, {
-            method: 'POST', // or 'PUT'
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                email: user?.email
-            }),
-            })
-            .then(response => response.json())
-            .then(data => {
-                localStorage.setItem("accessToken", data.token)
-                
-            })*/
-            navigate(from, {replace: true})
+    if(user1 || user2) {
+        navigate(from, {replace: true})
     }
     return (
         <div>

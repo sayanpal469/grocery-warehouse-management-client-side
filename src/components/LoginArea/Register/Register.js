@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import Fade from 'react-reveal/Fade';
-import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
+import { useAuthState, useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import { async } from '@firebase/util';
 import Loading from '../../Loading/Loading';
@@ -15,18 +15,22 @@ const Register = () => {
         error,
       ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
       const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+      const [user1] = useAuthState(auth)
+      const location = useLocation()
 
       const [confirmPassword, setConfirmPassword] = useState('')
+      const from = location.state?.from?.pathname || '/' ;
 
       const navigate = useNavigate()
       const [error1, setError1] = useState()
+     
 
       if(loading || updating) {
           return <Loading/>
       }
 
-      if(user) {
-          navigate('/')
+      if(user1) {
+        navigate('/')
       }
 
       const handelConfirmPasswordBlur = (e) => {
@@ -37,9 +41,10 @@ const Register = () => {
       const handelSubmit = async (e) => {
           e.preventDefault()
 
-          const name = e.target.name.value
-          const email = e.target.email.value
-          const password = e.target.password.value
+          const name = e.target.name.value;
+          const email = e.target.email.value;
+          const password = e.target.password.value;
+          console.log(name, email, password);
           
           if(password < 6) {
             setError1('minimum 6 charecter')
@@ -49,8 +54,26 @@ const Register = () => {
               setError1("Password did't match")
           }
 
+        const url = `http://localhost:5000/login`
+
+        fetch(url, {
+            method: 'POST', // or 'PUT'
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                email: user1?.email
+            }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                localStorage.setItem("accessToken", data.token)
+                
+            })
           await createUserWithEmailAndPassword(email, password)
           await updateProfile({ displayName: name })
+
       }
 
     return (

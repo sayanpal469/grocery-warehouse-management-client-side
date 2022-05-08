@@ -20,6 +20,7 @@ const Login = () => {
       const [sendPasswordResetEmail, sending, error1] = useSendPasswordResetEmail(
         auth
       );
+      
       const [user1] = useAuthState(auth)
       const navigate = useNavigate()
       const location = useLocation()
@@ -31,8 +32,8 @@ const Login = () => {
         }
 
       if(user1) {
-
-        /*const url = `https://nameless-reef-88992.herokuapp.com/login`
+        const url = `http://localhost:5000/login`
+        //console.log(user1.email);
 
         fetch(url, {
             method: 'POST', // or 'PUT'
@@ -40,16 +41,16 @@ const Login = () => {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                email: user?.email
+                email: user1.email
             }),
             })
             .then(response => response.json())
             .then(data => {
-            console.log('Success:', data);
-            })*/
-            navigate(from, {replace: true})
-
+                localStorage.setItem("accessToken", data.token)
+                navigate(from, {replace: true})
+            })
       }
+
 
       const handelSubmit = (e) => {
           e.preventDefault()

@@ -25,11 +25,11 @@ const AddItem = () => {
         const newProduct = {supplierName, email, name, price, quantity, description, image}
         //console.log(newProduct);
 
-        const url = 'https://nameless-reef-88992.herokuapp.com/product'
+        const url = 'http://localhost:5000/product'
         fetch(url, {
             method: 'POST',
             headers: {
-                //'authoraization': `${user.email} ${localStorage.getItem("accessToken")}`,
+                'authoraization': `${user.email} ${localStorage.getItem("accessToken")}`,
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(newProduct),
@@ -37,15 +37,32 @@ const AddItem = () => {
             .then(res => res.json())
             .then(data => {
             setItems(data)    
-            //console.log('Success:', data);
+            console.log('Success:', data);
+            e.target.reset()
+        })
+
+        const url2 = 'http://localhost:5000/login'
+        fetch(url2, {
+            method: 'POST',
+            headers: {
+                'authoraization': `${user.email} ${localStorage.getItem("accessToken")}`,
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(newProduct),
+            })
+            .then(res => res.json())
+            .then(data => {
+            setItems(data)    
+            console.log('Success:', data);
             e.target.reset()
         })
 
 
-        const url2 = 'https://nameless-reef-88992.herokuapp.com/userProduct'
-        fetch(url2, {
+        const url3 = 'http://localhost:5000/userProduct'
+        fetch(url3, {
             method: 'POST',
             headers: {
+                'authoraization': `${user.email} ${localStorage.getItem("accessToken")}`,
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(newProduct),
