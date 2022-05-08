@@ -69,10 +69,15 @@ const AddItem = () => {
             })
             .then(res => res.json())
             .then(data => {
-            setUserItems(data)        
-            toast('Product added')
-            //console.log('Success:', data);
-            e.target.reset()
+            setUserItems(data)
+            if(data.err){
+                toast('Unauthoraized Access')
+            } else{
+                toast('Product added')
+                //console.log('Success:', data);
+                e.target.reset()
+            }        
+           
         })
     }
     return (
