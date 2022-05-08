@@ -25,7 +25,7 @@ const AddItem = () => {
         const newProduct = {supplierName, email, name, price, quantity, description, image}
         //console.log(newProduct);
 
-        const url = 'http://localhost:5000/product'
+        const url = 'https://nameless-reef-88992.herokuapp.com/product'
         fetch(url, {
             method: 'POST',
             headers: {
@@ -41,7 +41,7 @@ const AddItem = () => {
             e.target.reset()
         })
 
-        const url2 = 'http://localhost:5000/login'
+        const url2 = 'https://nameless-reef-88992.herokuapp.com/login'
         fetch(url2, {
             method: 'POST',
             headers: {
@@ -58,7 +58,7 @@ const AddItem = () => {
         })
 
 
-        const url3 = 'http://localhost:5000/userProduct'
+        const url3 = 'https://nameless-reef-88992.herokuapp.com/userProduct'
         fetch(url3, {
             method: 'POST',
             headers: {

@@ -10,7 +10,7 @@ const ItemDetail = () => {
     const navigate = useNavigate()
 
     useEffect( () => {
-        const url = `http://localhost:5000/product/${itemId}`
+        const url = `https://nameless-reef-88992.herokuapp.com/product/${itemId}`
         fetch(url)
         .then(res => res.json())
         .then(data => setItem(data))
@@ -25,7 +25,7 @@ const ItemDetail = () => {
 
             const deleverQuantity = {newQuantity}
 
-            const url = `http://localhost:5000/product/${itemId}`
+            const url = `https://nameless-reef-88992.herokuapp.com/product/${itemId}`
             fetch(url, {
                 method: 'PUT',
                 headers: {
@@ -59,7 +59,7 @@ const ItemDetail = () => {
 
         const updateQuantity = {newQuantity}
         
-        const url = `http://localhost:5000/product/${itemId}`
+        const url = `https://nameless-reef-88992.herokuapp.com/product/${itemId}`
         fetch(url, {
             method: 'PUT',
             headers: {

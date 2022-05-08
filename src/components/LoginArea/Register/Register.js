@@ -54,7 +54,7 @@ const Register = () => {
               setError1("Password did't match")
           }
 
-        const url = `http://localhost:5000/login`
+        const url = `https://nameless-reef-88992.herokuapp.com/login`
 
         fetch(url, {
             method: 'POST', // or 'PUT'
