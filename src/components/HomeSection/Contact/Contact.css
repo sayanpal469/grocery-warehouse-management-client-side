@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Baloo+2:wght@400;700&family=Baloo+Bhai+2:wght@400;700&family=Baloo+Bhaijaan+2:wght@400;500;700&family=Dancing+Script:wght@400;700&family=Fredoka+One&family=Fuzzy+Bubbles:wght@400;700&family=Indie+Flower&family=Inter:wght@100;200;300;600;700;800&family=Josefin+Sans:wght@400;700&family=Lato:wght@400;700&family=League+Gothic&family=Lobster&family=Poppins:wght@400;700&family=Quicksand:wght@400;700&family=Raleway:wght@300;400;700&family=Roboto:ital,wght@0,500;1,400;1,500&family=Satisfy&family=The+Nautigal:wght@400;700&display=swap');
+
+
+
+.contact-section{
+    background: #f5f6fa;
+    padding: 15px 10px;
+    font-family: 'Josefin Sans', sans-serif;
+    padding-top: 50px;
+}
+.contact p{
+    font-size: 12px;
+}
+
+#inputState{
+    font-size: 12px;
+    border-radius: 15px;
+}
+
+
+.form-group{
+    margin-bottom: 20px;
+}
+
+.form-group input{
+    font-size: 12px;
+    border-radius: 15px;
+}
+
+.form-floating textarea{
+    font-size: 18px;
+    border-radius: 15px;
+}
+
+.submit-btn{
+    color: #fff;
+}

@@ -1,0 +1,13 @@
+body {
+    display: flex;
+    height: 100vh;
+  }
+  
+  #loader {
+    margin: auto;
+    width: 200px;
+    height: 200px;
+    visibility: hidden;
+    overflow: visible;
+  }
+  

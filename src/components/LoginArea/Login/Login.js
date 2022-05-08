@@ -5,6 +5,9 @@ import './Login.css'
 import Fade from 'react-reveal/Fade';
 import { useAuthState, useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Loading from '../../Loading/Loading';
 
 const Login = () => {
     const emailRef = useRef('')
@@ -23,10 +26,13 @@ const Login = () => {
       const from = location.state?.from?.pathname || '/' ;
 
       
+        if(loading || sending) {
+            return <Loading/>
+        }
 
       if(user1) {
 
-        /*const url = `http://localhost:5000/login`
+        /*const url = `https://nameless-reef-88992.herokuapp.com/login`
 
         fetch(url, {
             method: 'POST', // or 'PUT'
@@ -58,10 +64,10 @@ const Login = () => {
         const email = emailRef.current.value
         if (email) {
           await sendPasswordResetEmail(email);
-          alert("Sent email");
+          toast("Sent email");
          }
           else{
-          alert("Please enter your email address");
+          toast("Please enter your email address");
         }
         }
     return (

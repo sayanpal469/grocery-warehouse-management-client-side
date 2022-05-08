@@ -1,7 +1,9 @@
 import { useAuthState } from 'react-firebase-hooks/auth'
+import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
 import useItems from '../../../Hooks/useItems';
 import useUser from '../../../Hooks/useUser';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const AddItem = () => {
@@ -23,7 +25,7 @@ const AddItem = () => {
         const newProduct = {supplierName, email, name, price, quantity, description, image}
         //console.log(newProduct);
 
-        const url = 'http://localhost:5000/product'
+        const url = 'https://nameless-reef-88992.herokuapp.com/product'
         fetch(url, {
             method: 'POST',
             headers: {
@@ -35,13 +37,12 @@ const AddItem = () => {
             .then(res => res.json())
             .then(data => {
             setItems(data)    
-            alert('Product added')
             //console.log('Success:', data);
             e.target.reset()
         })
 
 
-        const url2 = 'http://localhost:5000/userProduct'
+        const url2 = 'https://nameless-reef-88992.herokuapp.com/userProduct'
         fetch(url2, {
             method: 'POST',
             headers: {
@@ -52,7 +53,7 @@ const AddItem = () => {
             .then(res => res.json())
             .then(data => {
             setUserItems(data)        
-            alert('Product added')
+            toast('Product added')
             //console.log('Success:', data);
             e.target.reset()
         })

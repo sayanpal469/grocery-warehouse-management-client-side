@@ -3,12 +3,16 @@ import './ExtraSection.css'
 import { FaShippingFast } from "react-icons/fa";
 import { HiOutlineThumbUp } from "react-icons/hi";
 import { MdPayment } from "react-icons/md";
+import Zoom from 'react-reveal/Zoom';
 
 const ExtraSection = () => {
     return (
         <div className="container my-5">
+            <Zoom top>
             <div className='row border py-3'>
+            
             <div className="col-lg-4 col-md-4 col-sm-6">
+                
                 <div className='box d-flex justify-content-between align-items-center p-3'>
                     <div>
                         <FaShippingFast className='rIcon'></FaShippingFast>
@@ -18,7 +22,9 @@ const ExtraSection = () => {
                         <p>Free shippnig on order over $99</p>
                     </div>
                 </div>
+                
             </div>
+            
             <div className="col-lg-4 col-md-4 col-sm-6">
                 <div className='box d-flex justify-content-between align-items-center  p-3'>
                     <div>
@@ -43,6 +49,7 @@ const ExtraSection = () => {
             </div>
             
         </div>
+        </Zoom>
         </div>
     );
 };

@@ -1,6 +1,7 @@
 import React from 'react';
 import AppSection from '../AppSection/AppSection';
 import Banner from '../Banner/Banner';
+import Contact from '../Contact/Contact';
 import ExtraSection from '../ExtraSection/ExtraSection';
 import FarmTable from '../FarmTable/FarmTable';
 import FooterBanner from '../FooterBanner/FooterBanner';
@@ -16,6 +17,7 @@ const Home = () => {
             <AppSection/>
             <Partner/>
             <FarmTable/>
+            <Contact/>
             <FooterBanner/>
         </div>
     );

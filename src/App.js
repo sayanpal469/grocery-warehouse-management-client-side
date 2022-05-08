@@ -12,6 +12,7 @@ import ManageItems from './components/PrivateSection/ManageItem/ManageItems';
 import Footer from './components/Footer/Footer';
 import MyItems from './components/PrivateSection/MyItems/MyItems';
 import Chat from './components/Chat/Chat';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
        <Route path='/login' element={ <Login/> }></Route>
        <Route path='/register' element={ <Register/> }></Route>
      </Routes>
+     <ToastContainer/>
      {/*<Chat/>*/}
      <Footer/>
     </div>

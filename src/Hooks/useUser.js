@@ -9,7 +9,7 @@ const useUser = () => {
 
     useEffect(() => {
         const email = user?.email
-        const url = `http://localhost:5000/userProduct?email=${email}`
+        const url = `https://nameless-reef-88992.herokuapp.com/userProduct?email=${email}`
         fetch(url)
         .then(res => res.json())
         .then(data => setUserItems(data))

@@ -5,6 +5,7 @@ import Fade from 'react-reveal/Fade';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import { async } from '@firebase/util';
+import Loading from '../../Loading/Loading';
 
 const Register = () => {
     const [
@@ -19,6 +20,14 @@ const Register = () => {
 
       const navigate = useNavigate()
       const [error1, setError1] = useState()
+
+      if(loading || updating) {
+          return <Loading/>
+      }
+
+      if(user) {
+          navigate('/')
+      }
 
       const handelConfirmPasswordBlur = (e) => {
         setConfirmPassword(e.target.value)
@@ -42,7 +51,6 @@ const Register = () => {
 
           await createUserWithEmailAndPassword(email, password)
           await updateProfile({ displayName: name })
-          navigate('/')
       }
 
     return (
