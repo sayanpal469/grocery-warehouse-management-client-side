@@ -14,7 +14,6 @@ import MyItems from './components/PrivateSection/MyItems/MyItems';
 import Chat from './components/Chat/Chat';
 import { ToastContainer } from 'react-toastify';
 import Blog from './components/Blog/Blog';
-import About from './components/About/About';
 import NotFound from './components/NotFound/NotFound';
 
 function App() {
@@ -37,7 +36,6 @@ function App() {
         <MyItems/>
        </RequireAuth> }></Route>
        <Route path='/blog' element={ <Blog/> }></Route>
-       <Route path='/about' element={  <About/> }></Route>
        <Route path='/login' element={ <Login/> }></Route>
        <Route path='/register' element={ <Register/> }></Route>
        <Route path='*' element={ <NotFound/> }></Route>

@@ -56,10 +56,6 @@ const Nav = () => {
           <Link className="nav-link" to="blog">Blog</Link>
         </li>
 
-        <li className="nav-item">
-          <Link className="nav-link" to="about">About</Link>
-        </li>
-
       </ul>
 
       {
